@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | AlmaFisio</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Inter", Arial, sans-serif;
+            background: linear-gradient(180deg, #dce9f8, #bcd5f3);
+            color: #1f2d3d;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(8px);
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255,255,255,0.4);
+        }
+
+        nav a {
+            margin: 0 18px;
+            text-decoration: none;
+            color: #2b4c7e;
+            font-weight: 500;
+        }
+
+        nav a.active {
+            border-bottom: 3px solid #4c8be8;
+            padding-bottom: 6px;
+            color: #4c8be8;
+        }
+
+        .container {
+            padding: 40px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            color: #234f7d;
+        }
+
+        .sub {
+            margin-top: -8px;
+            font-size: 1.1rem;
+            opacity: 0.7;
+        }
+
+        .botoes {
+            margin-top: 25px;
+            display: flex;
+            gap: 20px;
+        }
+
+        .btn {
+            padding: 14px 28px;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: 0.2s;
+        }
+
+        .primary {
+            background: #4c8be8;
+            color: white;
+        }
+
+        .secondary {
+            background: #e4ecf7;
+            color: #234f7d;
+        }
+
+        .cards-stats {
+            display: flex;
+            gap: 20px;
+            margin-top: 35px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(4px);
+            padding: 20px;
+            border-radius: 12px;
+            width: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+        }
+
+        .card .numero {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #234f7d;
+        }
+
+        .painel {
+            margin-top: 40px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+        }
+
+        .lista {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #d2dcea;
+        }
+
+        .item img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .col {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .painel-lateral {
+            position: absolute;
+            top: 140px;
+            right: 40px;
+            width: 260px;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(6px);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .painel-lateral h3 {
+            text-align: center;
+            color: #234f7d;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <nav>
+        <a class="active">Início</a>
+        <a>Pacientes</a>
+        <a>Agendamentos</a>
+        <a>Exercícios</a>
+        <a>Perfil</a>
+    </nav>
+    <img src="perfil.jpg" alt="Foto" style="width:42px; height:42px; border-radius:50%;">
+</header>
+
+<div class="container">
+    <h1>Bem-vindo à <strong>AlmaFisio</strong></h1>
+    <p class="sub">Sistema de gestão para fisioterapia esportiva</p>
+
+    <div class="botoes">
+        <button class="btn primary">Agendar Consulta</button>
+        <button class="btn secondary">Cadastrar Paciente</button>
+    </div>
+
+    <div class="cards-stats">
+        <div class="card"><div class="numero">32</div><p>Pacientes</p></div>
+        <div class="card"><div class="numero">17</div><p>Consultas</p></div>
+        <div class="card"><div class="numero">25</div><p>Exercícios</p></div>
+    </div>
+
+    <div class="painel">
+        <h3>Últimos atendimentos</h3>
+        <div class="lista">
+            <div class="item">
+                <div class="col">
+                    <img src="dr1.jpg"><span>Dr. João Silva</span>
+                </div>
+                <strong>150,00</strong>
+            </div>
+            <div class="item">
+                <div class="col">
+                    <img src="paciente1.jpg"><span>Renata Souza</span>
+                </div>
+                <strong>100,00</strong>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Painel lateral -->
+<div class="painel-lateral">
+    <h3>Novos Atendimentos</h3>
+    <div class="lista">
+        <div class="item"><div class="col"><img src="p1.jpg">Lucas Silva</div><strong>90,00</strong></div>
+        <div class="item"><div class="col"><img src="p2.jpg">Dr. Rafael Costa</div><strong>10,00</strong></div>
+        <div class="item"><div class="col"><img src="p3.jpg">Guilherme Pereira</div><strong>10,00</strong></div>
+        <div class="item"><div class="col"><img src="p4.jpg">Mara Fernandes</div><strong>10,00</strong></div>
+    </div>
+</div>
+
+</body>
+</html
