@@ -1,9 +1,9 @@
 <?php
 require_once "config.php";
 
-if(!isset($_SESSION['usuario'])){
-header("Location: index.php");
-exit;
+if (!isset($_SESSION['usuario'])) {
+    header("Location: index.php");
+    exit;
 }
 
 include "header.php";
@@ -11,47 +11,63 @@ include "header.php";
 $u_id = $_SESSION['usuario']['id'];
 ?>
 
-<div class="container">
 
-<div class="card">
+<!DOCTYPE html>
+<html lang="pt-br">
 
-<h2>Minha Agenda</h2>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meus agendamentos</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
 
-<table>
+<body>
+    <div class="container">
 
-<tr>
-<th>Serviço</th>
-<th>Data</th>
-<th>Status</th>
-</tr>
+        <div class="card">
 
-<?php
+            <h2>Minha Agenda</h2>
 
-$sql = "SELECT a.*, s.nome 
+            <table>
+
+                <tr>
+                    <th>Serviço</th>
+                    <th>Data</th>
+                    <th>Status</th>
+                </tr>
+
+                <?php
+
+                $sql = "SELECT a.*, s.nome 
 FROM agendamentos a
 JOIN servicos s ON s.id = a.servico_id
 WHERE a.usuario_id='$u_id'";
 
-$res = $conn->query($sql);
+                $res = $conn->query($sql);
 
-while($ag = $res->fetch_assoc()){
+                while ($ag = $res->fetch_assoc()) {
 
-?>
+                ?>
 
-<tr>
+                    <tr>
 
-<td><?= $ag['nome'] ?></td>
+                        <td><?= $ag['nome'] ?></td>
 
-<td><?= $ag['data'] ?> <?= $ag['horario'] ?></td>
+                        <td><?= $ag['data'] ?> <?= $ag['horario'] ?></td>
 
-<td><?= $ag['status'] ?></td>
+                        <td><?= $ag['status'] ?></td>
 
-</tr>
+                    </tr>
 
-<?php } ?>
+                <?php } ?>
 
-</table>
+            </table>
 
-</div>
+        </div>
 
-</div>
+    </div>
+
+</body>
+
+</html>
