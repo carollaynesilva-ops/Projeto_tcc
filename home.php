@@ -11,7 +11,7 @@ require_once "config.php";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>home</title>
-    <link rel="stylesheet" href="css/style.css">
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
     <style>
         body {
             margin: 0;
@@ -23,13 +23,14 @@ require_once "config.php";
                     #cce3ff 50%,
                     #a1cdff 100%);
             background-attachment: fixed;
+            font-family: Arial, Helvetica, sans-serif;
         }
 
         .navbar {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background-color: #e4f1ff;
+            background-color: #f4f9ff;
             padding: 10px 40px;
         }
 
@@ -115,10 +116,82 @@ require_once "config.php";
             font-size: 16px;
             color: #2b3f63;
         }
+
+        .container_center {
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        .titulo {
+            font-size: 36px;
+            color: #4c5d80;
+        }
+
+        .subtitulo {
+            margin-top: 10px;
+            font-size: 18px;
+            color: #6b7a99;
+        }
+
+        /* botões */
+
+        .acoes {
+            margin-top: 35px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .btn-primary {
+            background: #5fa8ff;
+            padding: 14px 28px;
+            border-radius: 12px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-secundario {
+            background: #e9eff7;
+            padding: 14px 28px;
+            border-radius: 12px;
+            color: #4c5d80;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* cards */
+
+        .cards {
+            margin-top: 50px;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .card {
+            background: #f4f9ff;
+            padding: 25px 50px;
+            border-radius: 14px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        .numero {
+            font-size: 30px;
+            font-weight: bold;
+            color: #4c5d80;
+        }
+
+        .label {
+            font-size: 15px;
+            color: #7a8ca8;
+        }
     </style>
 </head>
 
 <body>
+    <!-- MENU -->
     <nav class="navbar">
         <!-- <div class="logo"><img src="_imagens/logo.png" alt="Logo" class="logo_img"></div> -->
         <h2 class="logo">
@@ -130,22 +203,37 @@ require_once "config.php";
             <li><a href="#">Serviços</a></li>
             <li><a href="#">Agendamentos</a></li>
             <li><a href="#">Exercícios</a></li>
-            
+            <li><a href="logout.php">Sair</a></li>
         </ul>
 
         <div class="profile">
-             <a href="perfil.php">
+            <a href="perfil.php">
                 <img src="_imagens/perfil.jpg" alt="foto do usuário">
                 <!-- <span>Perfil</span> -->
-             </a>
-            
+            </a>
         </div>
     </nav>
 
-
     <div class="container_center">
 
+        <h1 class="titulo">
+            Bem-vindo à <span class="alma">Alma</span><span class="fisio">Fisio</span>
+        </h1>
+
+        <p class="subtitulo">
+            Sistema de gestão para fisioterapia esportiva
+        </p>
+
+        <div class="acoes">
+            <a href="agendar.php" class="btn-primary">Agendar Consulta</a>
+
+        </div>
+
+
+        </div>
+
     </div>
+
 </body>
 
 </html>
