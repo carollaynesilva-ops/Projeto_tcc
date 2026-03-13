@@ -7,7 +7,7 @@
 
         <?php if(isset($_SESSION['usuario'])): ?>
 
-            <a href="home.php">Serviços</a>
+            <a href="servicos.php">Serviços</a>
             <a href="meus_agendamentos.php">Minha Agenda</a>
 
             <?php if($isAdmin): ?>
